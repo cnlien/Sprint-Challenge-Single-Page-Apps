@@ -30,6 +30,7 @@ const CharacterList = props => {
   return (
     <Card>
       <CardBody>
+        
       <SearchForm/>
 
       <section className="character-list">

@@ -3,6 +3,7 @@ import Header from "./components/Header.js";
 import { Route } from 'react-router-dom';
 import { Container } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 
 import Navigation from './components/Navigation';
 
@@ -13,7 +14,7 @@ import CharacterList from './components/CharacterList';
 
 const App = () => {
   return (
-    <Container>
+    <Container className='appContainer'>
       <Navigation/>
       <Header/>
       <Route exact path='/' component = {WelcomePage}/>

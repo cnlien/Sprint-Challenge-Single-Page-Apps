@@ -5,21 +5,13 @@ import './components.css';
 
 export default function SearchForm({search}) {
   
-  const [character, setCharacter] = useState('')
-
-  const handleSearch = event => {
-    setCharacter(event.target.value)
-  }
-
   return (
     <section className="search-form">
-      <Form onSubmit = {() => search(character)}>
+      <Form>
         <Input
           className='searchbox'
           name='name'
           placeholder='Search Characters'
-          value={character}
-          onChange={handleSearch}
         />
         <Button type="submit">Search</Button>
      </Form>
