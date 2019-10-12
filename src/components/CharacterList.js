@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { Card, CardBody } from 'reactstrap';
+import { Card, CardBody, CardHeader, CardText } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import './components.css';
+
+import SearchForm from './SearchForm.js';
 
 const CharacterList = props => {
   const [characters, setCharacters] = useState([])
@@ -28,6 +30,8 @@ const CharacterList = props => {
   return (
     <Card>
       <CardBody>
+      <SearchForm/>
+
       <section className="character-list">
         {characters.map(character => (
           <CharDetails key={ character.id } character={ character }/>
@@ -41,13 +45,15 @@ const CharacterList = props => {
 function CharDetails ({ character }) {
   const { name, species, gender} = character;
   return (
-    <Link to ={`/character/${character.id}`}>
-      <div className="character-card">
-        <h2>{ name }</h2>
-        <p className="character-species">{ species }</p>
-        <p className="character-gender">{ gender }</p>
+      <div className="charList">
+        <Card className="charCard">
+          <CardBody>
+            <CardHeader> {name} </CardHeader>
+            <CardText>{ species }</CardText>
+            <CardText>{ gender }</CardText>
+          </CardBody>
+        </Card>
       </div>
-    </Link>
   );
 }
 

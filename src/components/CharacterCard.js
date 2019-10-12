@@ -5,26 +5,7 @@ import axios from 'axios';
 
 
 const CharacterCard = (props) => {
-
-  console.log(props);
-  const [character, setCharacter] = useState(null);
-
-  useEffect(()=> {
-    const id = props.match.params.id;
-    console.log(id);
-
-    axios
-      .get(`https://rickandmortyapi.com/api/character/${id}`)
-      .then(res => {
-        console.log(res.data.results);
-        setCharacter(res.data.results);
-      })
-      .catch(err => {
-        console.error(err);
-      });
-  }, [props.match.params.id]);
-  
-  const { name, species, gender } = character;
+  let character = props.character;
   return(
     <Card>
       <CardBody>
