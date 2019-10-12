@@ -1,0 +1,22 @@
+.nav-item {
+  margin-right: 5%;
+}
+
+.character-list {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.charCard {
+  margin: 1.5%;
+  flex-grow: 1;
+}
+
+.search-form {
+  margin: 1.5%;
+}
+
+.searchbox {
+  margin-bottom: 1.5%;
+}
